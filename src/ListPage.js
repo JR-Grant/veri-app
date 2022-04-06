@@ -48,7 +48,10 @@ const ListPage=() => {
                 <div className="Certificate-Preview" key={Cert.ID}>
                     <h2>{ Cert.title }</h2>
                     <img src={`https:ipfs.infura.io/ipfs/${Cert.photo}`}/>
-                    <p>Created by { Cert.artist } On the { unixToDate(Cert.year) }</p>
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <div>Artist: { Cert.artist }</div>
+                        <div>Created on: { unixToDate(Cert.year) }</div>
+                    </div>
                 </div>
             ))}
         </div>

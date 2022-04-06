@@ -12,7 +12,8 @@ import Certification from "../src/artifacts/contracts/Certification.sol/Certific
 
 
 function App() {
-
+  // model users identification with public address?
+  // mapping of users address to created certificates.
   const client = create('https://ipfs.infura.io:5001');
 
   const web3 = new Web3("http://127.0.0.1:8545/");
