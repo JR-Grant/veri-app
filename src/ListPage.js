@@ -16,7 +16,7 @@ const ListPage=() => {
 
 
     const getContractData = async () => {
-        const { _ID, _artist, _photoHash, _title, _year } = await contract.methods.returnCertificates().call();
+        const { _ID, _artist, _photoHash, _title, _year } = await contract.returnCertificates();
         let CertObject = [];
         for(let i = 0; i< _ID.length; i++) {
             let certificate = {

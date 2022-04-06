@@ -8,20 +8,20 @@ import ListPage from './ListPage';
 import { create } from 'ipfs-http-client';
 import Web3 from "web3";
 import Certification from "../src/artifacts/contracts/Certification.sol/Certification.json";
+import { AccAddress, PrivateKey, RINKEBY_API } from "./context/Private_ABI";
+import { ethers } from 'ethers';
 
 
 
 function App() {
-  // model users identification with public address?
-  // mapping of users address to created certificates.
-  const client = create('https://ipfs.infura.io:5001');
-
-  const web3 = new Web3(new Web3.providers.HttpProvider(
-    'https://rinkeby.infura.io/v3/31f62705b513402f90371112bc818aa9'
-  ));
-  
+  const client = create('https://ipfs.infura.io:5001')
   const contractAddress = "0x71618872CD0A0f455F8eAB4E9bAC1108649F21e2";
-  const contract = new web3.eth.Contract(Certification.abi, contractAddress);
+  let provider = ethers.getDefaultProvider(RINKEBY_API);
+
+  let signer = new ethers.Wallet(PrivateKey, provider);
+
+  const contract = new ethers.Contract(contractAddress, Certification.abi, signer);
+  
   return (
     <ContractProvider value={contract}>
     <IPFSProvider value={client}>

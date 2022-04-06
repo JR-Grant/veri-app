@@ -19,7 +19,7 @@ const CertForm = () => {
     }
 
     const setCert = async (title,artist,date,hash) => {
-      await contract.methods.createCertificate(hash, date, title, artist).send({ from: "0x2657D4cFBC87F6b9C514ba17CF001B17889592A4" });
+      await contract.createCertificate(hash, date, title, artist);
       console.log("hello");
     };
 
@@ -32,18 +32,14 @@ const CertForm = () => {
       const unix = dateToUnix();
       
       setCert(title, artist, unix, path);
-      //hash, date, title, artist
       //title,artist,date,hash
       setLoading(false);
     }
 
     const dateToUnix = () => {
-      console.log(date);
       const dateSTR = new Date(date);
-      console.log(dateSTR);
       const time = dateSTR.getTime();
       const UNIX = Math.floor(time / 1000);
-      console.log(UNIX);
       return Number(UNIX);
     }
 

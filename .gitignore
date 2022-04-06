@@ -34,3 +34,8 @@ artifacts
 
 #Private files
 Private_ABI.js
+
+#Hosting
+.firebaserc
+firebase.json
+/.firebase
