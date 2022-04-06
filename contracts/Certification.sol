@@ -16,7 +16,7 @@ contract Certification {
     mapping(uint=>Certificate) certificateID;
 
     Certificate[] certificates;
-    uint counter;
+    uint public counter;
 
     constructor() {
         counter = 0;
