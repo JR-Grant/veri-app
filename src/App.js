@@ -16,8 +16,11 @@ function App() {
   // mapping of users address to created certificates.
   const client = create('https://ipfs.infura.io:5001');
 
-  const web3 = new Web3("http://127.0.0.1:8545/");
-  const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+  const web3 = new Web3(new Web3.providers.HttpProvider(
+    'https://rinkeby.infura.io/v3/31f62705b513402f90371112bc818aa9'
+  ));
+  
+  const contractAddress = "0x71618872CD0A0f455F8eAB4E9bAC1108649F21e2";
   const contract = new web3.eth.Contract(Certification.abi, contractAddress);
   return (
     <ContractProvider value={contract}>

@@ -19,7 +19,7 @@ const CertForm = () => {
     }
 
     const setCert = async (title,artist,date,hash) => {
-      await contract.methods.createCertificate(hash, date, title, artist).send({ from: "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266" });
+      await contract.methods.createCertificate(hash, date, title, artist).send({ from: "0x2657D4cFBC87F6b9C514ba17CF001B17889592A4" });
       console.log("hello");
     };
 
