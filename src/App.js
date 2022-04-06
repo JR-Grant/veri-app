@@ -6,9 +6,8 @@ import NavBar from './NavBar';
 import CertForm from './Cert-Form';
 import ListPage from './ListPage';
 import { create } from 'ipfs-http-client';
-import Web3 from "web3";
 import Certification from "../src/artifacts/contracts/Certification.sol/Certification.json";
-import { AccAddress, PrivateKey, RINKEBY_API } from "./context/Private_ABI";
+import { PrivateKey, RINKEBY_API } from "./context/Private_ABI";
 import { ethers } from 'ethers';
 
 
